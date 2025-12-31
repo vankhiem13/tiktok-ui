@@ -1,0 +1,21 @@
+
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+
+:root {
+    --primary-color: #fe2c55;
+    --secondary-color: #fff;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed; /* Tối ưu hiển thị font */
+}   
