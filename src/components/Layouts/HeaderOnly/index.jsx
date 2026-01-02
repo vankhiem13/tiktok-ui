@@ -1,5 +1,4 @@
-import Header from "@/components/Layout/components/Header";
-import Sidebar from "./Sidebar";
+import Header from "@/components/Layouts/components/Header";
 
 function DefaultLayout({children}) {
     return ( 
@@ -7,7 +6,6 @@ function DefaultLayout({children}) {
             <div>
                 <div className='container'>
                     <Header/>
-                    <Sidebar/>
                     <div className='content'>
                         {children}
                     </div>
