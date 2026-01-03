@@ -7,7 +7,9 @@
 :root {
     --primary-color: #fe2c55;
     --secondary-color: #fff;
+    --text-color: #000;
     --side-nav-width: 15rem;
+    
 }
 *,
 *::before,
@@ -16,7 +18,7 @@
 }
 
 html {
-    font-size: 62.5%;
+    font-size: 100%;
 }
 
 body {
@@ -25,3 +27,13 @@ body {
   line-height: 1.5;
   text-rendering: optimizeSpeed; /* Tối ưu hiển thị font */
 }   
+
+/* button, input, [tabindex] {
+    outline: none;
+    border: none;
+}
+
+a[href] {
+    color: var(--text-color);
+    text-decoration: none;
+} */
