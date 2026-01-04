@@ -1,4 +1,5 @@
 import images from '@/assets/image';
+import { Link } from 'react-router-dom';
 function Sidebar() {
     return (
         <div className="w-[var(--side-nav-width)] shrink-0 z-[99]">
@@ -29,26 +30,32 @@ function Sidebar() {
                 overflow-y-auto [&::-webkit-scrollbar]:hidden"
                 >
                     <div className="flex flex-col gap-[0.25rem] pt-[0.5rem]">
-                        <h2 className="w-[13rem] h-[2.5rem] ml-1 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
-                            <div className="pl-2 pt-1 pl-2 pt-1 flex items-center gap-2 text-[var(--primary-color)]">
-                                <div className="text-[21px]">
-                                    <div className="w-[2rem] h-[2rem] justify-center items-center flex relative">
-                                        <i className="fa-solid fa-house"></i>
+
+                        <Link to="/">
+                            <h2 className="w-[13rem] h-[2.5rem] ml-1 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
+                                <div className="pl-2 pt-1 pl-2 pt-1 flex items-center gap-2 text-[var(--primary-color)]">
+                                    <div className="text-[21px]">
+                                        <div className="w-[2rem] h-[2rem] justify-center items-center flex relative">
+                                            <i className="fa-solid fa-house"></i>
+                                        </div>
                                     </div>
+                                    <p className="text-[16px] font-semibold pl-2">For You</p>
                                 </div>
-                                <p className="text-[16px] font-semibold pl-2">For You</p>
-                            </div>
-                        </h2>
+                            </h2>
+                        </Link>
+
                         <h2 className="w-[13rem] h-[2.5rem] ml-1 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
                             <div className="pl-2 pt-1 flex items-center gap-2">
                                 <div className="text-[21px]">
                                     <div className="w-[2rem] h-[2rem] justify-center items-center flex relative">
-                                       <i class="fa-regular fa-compass"></i>
+                                       <i className="fa-regular fa-compass"></i>
                                     </div>
                                 </div>
                                 <p className="text-[16px] text-black font-semibold pl-2">Explore</p>
                             </div>
                         </h2>
+                        <Link  to="/following">
+                        
                         <h2 className="w-[13rem] h-[2.5rem] ml-1 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
                             <div className="pl-2 pt-1 flex items-center gap-2">
                                 <div className="text-[21px]">
@@ -59,6 +66,8 @@ function Sidebar() {
                                 <p className="text-[16px] text-black font-semibold pl-2">Following</p>
                             </div>
                         </h2>
+                        </Link>
+                        
                         <h2 className="w-[13rem] h-[2.5rem] ml-1 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
                             <div className="pl-2 pt-1 flex items-center gap-2">
                                 <div className="text-[21px]">
@@ -89,7 +98,7 @@ function Sidebar() {
                                 <p className="text-[16px] text-black font-semibold pl-2">Messages</p>
                             </div>
                         </h2>
-                        <h2 className="w-[13rem] h-[2.5rem] ml-1 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
+                        <div className="w-[13rem] h-[2.5rem] ml-1 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
                             <div className="pl-2 pt-1 flex items-center gap-2">
                                 <div className="text-[21px]">
                                     <div className="w-[2rem] h-[2rem] justify-center items-center flex relative">
@@ -98,8 +107,8 @@ function Sidebar() {
                                 </div>
                                 <p className="text-[16px] text-black font-semibold pl-2">Activity</p>
                             </div>
-                        </h2>
-                        <h2 className="w-[13rem] h-[2.5rem] ml-1 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
+                        </div>
+                        <div className="w-[13rem] h-[2.5rem] ml-1 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
                             <div className="pl-2 pt-1 flex items-center gap-2">
                                 <div className="text-[21px]">
                                     <div className="w-[2rem] h-[2rem] justify-center items-center flex relative">
@@ -108,7 +117,7 @@ function Sidebar() {
                                 </div>
                                 <p className="text-[16px] text-black font-semibold pl-2">Upload</p>
                             </div>
-                        </h2>
+                        </div>
                         <h2 className="w-[13rem] h-[2.5rem] ml-1 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
                             <div className="pl-2 pt-1 flex items-center gap-2">
                                 <div className="text-[21px]">
@@ -122,7 +131,7 @@ function Sidebar() {
                                 <p className="text-[16px] text-black font-semibold pl-2">Profile</p>
                             </div>
                         </h2>
-                        <h2 className="w-[13rem] h-[2.5rem] ml-1 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
+                        <div className="w-[13rem] h-[2.5rem] ml-1 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
                             <div className="pl-2 pt-1 flex items-center gap-2">
                                 <div className="text-[21px]">
                                     <div className="w-[2rem] h-[2rem] justify-center items-center flex relative">
@@ -131,52 +140,58 @@ function Sidebar() {
                                 </div>
                                 <p className="text-[16px] text-black font-semibold pl-2">More</p>
                             </div>
-                        </h2>
-                        <h2 className="w-[13rem] h-[2.5rem] ml-1 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
-                            <div className="pl-2 pt-1 flex items-center gap-2">
-                                <div className="text-[21px]">
-                                    <div className="w-[2rem] h-[2rem] justify-center items-center flex relative">
-                                        <i className="fa-solid fa-ellipsis"></i>
-                                    </div>
-                                </div>
-                                <p className="text-[16px] text-black font-semibold pl-2">More</p>
-                            </div>
-                        </h2>
-                        <h2 className="w-[13rem] h-[2.5rem] ml-1 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
-                            <div className="pl-2 pt-1 flex items-center gap-2">
-                                <div className="text-[21px]">
-                                    <div className="w-[2rem] h-[2rem] justify-center items-center flex relative">
-                                        <i className="fa-solid fa-ellipsis"></i>
-                                    </div>
-                                </div>
-                                <p className="text-[16px] text-black font-semibold pl-2">More</p>
-                            </div>
-                        </h2>
-                        <h2 className="w-[13rem] h-[2.5rem] ml-1 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
-                            <div className="pl-2 pt-1 flex items-center gap-2">
-                                <div className="text-[21px]">
-                                    <div className="w-[2rem] h-[2rem] justify-center items-center flex relative">
-                                        <i className="fa-solid fa-ellipsis"></i>
-                                    </div>
-                                </div>
-                                <p className="text-[16px] text-black font-semibold pl-2">More</p>
-                            </div>
-                        </h2>
-                        <h2 className="w-[13rem] h-[2.5rem] ml-1 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
-                            <div className="pl-2 pt-1 flex items-center gap-2">
-                                <div className="text-[21px]">
-                                    <div className="w-[2rem] h-[2rem] justify-center items-center flex relative">
-                                        <i className="fa-solid fa-ellipsis"></i>
-                                    </div>
-                                </div>
-                                <p className="text-[16px] text-black font-semibold pl-2">More</p>
-                            </div>
-                        </h2>
-                        
-
+                        </div>
                     </div>
-                    <div></div>
-                    <div></div>
+
+                    <div>
+                        <div className="mx-1 h-px w-[85%] bg-gray-200 mb-3 mt-4" />
+                        <div>
+                            <div>
+                                <div className="pl-2 text-[14px] text-gray-600 font-semibold">Following accounts</div>
+                        
+                                <div className="w-[13rem] flex items-center gap-3 mt-2 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
+                                    <div className="pl-2">
+                                        <div>
+                                            <img className="w-7 h-7 rounded-full" src="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/cfad1886bf6c13d8d0debfbfa9177343~tplv-tiktokx-cropcenter:100:100.jpeg?dr=14579&refresh_token=c87d5b36&x-expires=1767682800&x-signature=I0zi0yu4YXRlSH8Fo3Nz0Sq7cXk%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my" alt="" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li className="text-[14px] font-medium">CrisDevilGamer
+                                                <i className="fa-solid fa-circle-check ml-1 text-[rgb(32,213,236)]"></i>
+                                            </li>
+                                            <li className="text-[14px] font-normal">crisdevilgamer7</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div className="w-[13rem] flex items-center gap-3 mt-2 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
+                                    <div className="pl-2">
+                                        <div>
+                                            <img className="w-7 h-7 rounded-full" src="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/cfad1886bf6c13d8d0debfbfa9177343~tplv-tiktokx-cropcenter:100:100.jpeg?dr=14579&refresh_token=c87d5b36&x-expires=1767682800&x-signature=I0zi0yu4YXRlSH8Fo3Nz0Sq7cXk%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my" alt="" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li className="text-[14px] font-medium">CrisDevilGamer
+                                            </li>
+                                            <li className="text-[14px] font-normal">crisdevilgamer7</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                        
+                            </div>
+                        </div>
+                        
+                        <div className="mx-1 h-px w-[85%] bg-gray-200 mt-4" />
+                    </div>
+                    <div>
+                        <div className="mt-3 w-[13rem] ml-2 ">
+                            <h3 className="text-[15px] text-gray-500 font-semibold mb-1 cursor-pointer">Company</h3>
+                            <h3 className="text-[15px] text-gray-500 font-semibold mb-1 cursor-pointer">Program</h3>
+                            <h3 className="text-[15px] text-gray-500 font-semibold mb-1 cursor-pointer">Terms & Policies</h3>
+                            <p className="text-[12px] text-gray-500 ">© 2026 TikTok</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

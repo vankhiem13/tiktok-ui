@@ -8,9 +8,9 @@ function DefaultLayout({children}) {
                 <div className='wrapper'>
                     <Top_right_action_bar/>
 
-                    <div className='flex'>
+                    <div className='flex h-screen'>
                         <Sidebar/>
-                        <div className='content'>
+                        <div className='w-full my-0 mx-auto relative min-w-[420px] shrink-1 flex justify-center items-stretch'>
                             {children}
                         </div>
                     </div>
