@@ -123,7 +123,7 @@ function Sidebar() {
                                 <div className="text-[21px]">
                                     <div className="w-[2rem] h-[2rem] justify-center items-center flex relative">
                                         <img
-                                        src="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/99741b40f1a9f3dfc98b8fd9b466f5c7~tplv-tiktokx-cropcenter:720:720.jpeg?dr=14579&refresh_token=72a2faf5&x-expires=1767528000&x-signature=65JsSgVTIexKAioIeESouGc%2FymM%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my"
+                                        src={images.avatar}
                                         className="w-6 h-6 rounded-full"
                     />
                                     </div>
