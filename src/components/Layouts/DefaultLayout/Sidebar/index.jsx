@@ -1,5 +1,6 @@
 import images from '@/assets/image';
 import { Link } from 'react-router-dom';
+import Drawwer_container from './Drawwer_container';
 function Sidebar() {
     return (
         <div className="w-[var(--side-nav-width)] shrink-0 z-[99]">
@@ -193,6 +194,7 @@ function Sidebar() {
                         </div>
                     </div>
                 </div>
+                <Drawwer_container/>
             </div>
         </div>
     );

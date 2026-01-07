@@ -89,7 +89,7 @@ function Home() {
                                 <p className="text-[12px] text-gray-600 font-semibold">7737</p>
                             </button>
                             <a href="">
-                                <img className=" rounded-full" src={images.avatar} alt="" />
+                                <img className=" rounded-full w-[44px] h-[44px]" src={images.avatar} alt="" />
                             </a>
                         </section>
                     </div>
@@ -173,7 +173,7 @@ function Home() {
                                 <p className="text-[12px] text-gray-600 font-semibold">7737</p>
                             </button>
                             <a href="">
-                                <img className=" rounded-full" src={images.avatar} alt="" />
+                                <img className=" rounded-full w-[44px] h-[44px]" src={images.avatar} alt="" />
                             </a>
                         </section>
                     </div>
@@ -257,7 +257,7 @@ function Home() {
                                 <p className="text-[12px] text-gray-600 font-semibold">7737</p>
                             </button>
                             <a href="">
-                                <img className=" rounded-full" src={images.avatar} alt="" />
+                                <img className=" rounded-full w-[44px] h-[44px]" src={images.avatar} alt="" />
                             </a>
                         </section>
                     </div>
