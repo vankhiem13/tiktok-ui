@@ -1,11 +1,13 @@
-function Drawwer_container() {
+import clsx from "clsx";
+
+function Drawwer_container({onClose, isOpen}) {
     return (
         <>
-            <div className="fixed top-0 left-[24.5rem] w-[100vw] h-[100vh] z-[99]"></div>
-
+            
+            {isOpen && ( <div  className="fixed top-0 left-[24.5rem] w-[100vw] h-[100vh] z-[99]" onClick={onClose}></div>)}
             <div
-                className="w-[20rem] h-[100vh] fixed left-[4.5rem] bg-white z-[99]
-             border-x border-[rgba(0,0,0,0.12)] overscroll-contain"
+                className={clsx('w-[20rem] h-[100vh] fixed left-[4.5rem] bg-white z-[99] border-x border-[rgba(0,0,0,0.12)] overscroll-contain transition-all duration-300',
+                            isOpen ? 'translate-x-0 opacity-100' : '-translate-x-[390px] opacity-0')}
             >
                 <div className="p-[0.5rem] pe-0">
                     <div className="h-[4.5rem] pt-[1rem] pl-[0.5rem]">

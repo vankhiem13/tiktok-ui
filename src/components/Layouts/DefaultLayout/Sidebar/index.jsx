@@ -1,7 +1,11 @@
+import React, { useState } from 'react';
+import clsx from 'clsx';
 import images from '@/assets/image';
 import { Link } from 'react-router-dom';
 import Drawwer_container from './Drawwer_container';
 function Sidebar() {
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
     return (
         <div className="w-[var(--side-nav-width)] shrink-0 z-[99]">
             <div className="h-[100vh] flex flex-col fixed w-[15rem] items-center ">
@@ -17,7 +21,7 @@ function Sidebar() {
                     </div>
 
                     <div className="w-[13rem] flex items-center mt-[0.25rem]">
-                        <button className="bg-[rgb(242,242,242)] h-[2.5rem] w-full flex items-center gap-2 cursor-pointer rounded-full">
+                        <button onClick={() => setIsDrawerOpen(true)} className="bg-[rgb(242,242,242)] h-[2.5rem] w-full flex items-center gap-2 cursor-pointer rounded-full">
                             <div className="text-[18px]">
                                 <i className="fa-solid fa-magnifying-glass ml-2"></i>
                             </div>
@@ -27,100 +31,160 @@ function Sidebar() {
                 </div>
 
                 <div
-                    className="flex flex-col w-full items-center pt-[0.25rem] pb-[0.5rem] 
-                overflow-y-auto [&::-webkit-scrollbar]:hidden"
+                    className={clsx("flex flex-col w-full items-center pt-[0.25rem] pb-[0.5rem] ",
+                        isDrawerOpen ? 'overflow-y-hidden' : 'overflow-y-auto [&::-webkit-scrollbar]:hidden'
+                    )}
                 >
-                    <div className="flex flex-col gap-[0.25rem] pt-[0.5rem]">
+                    <div className="flex flex-col gap-[0.25rem] pt-[0.5rem] pr-[0.8rem]">
 
                         <Link to="/">
-                            <h2 className="w-[13rem] h-[2.5rem] ml-1 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
-                                <div className="pl-2 pt-1 pl-2 pt-1 flex items-center gap-2 text-[var(--primary-color)]">
+                            <h2 className={clsx(" h-[2.5rem] ml-3 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md",
+                                                'transition-[width] duration-300 overflow-hidden',
+                                                isDrawerOpen ? 'w-[40px]' : 'w-[13rem]'
+                            )}>
+                                <div className="pl-1 pt-1 flex items-center gap-2 text-[var(--primary-color)]">
                                     <div className="text-[21px]">
                                         <div className="w-[2rem] h-[2rem] justify-center items-center flex relative">
                                             <i className="fa-solid fa-house"></i>
                                         </div>
                                     </div>
-                                    <p className="text-[16px] font-semibold pl-2">For You</p>
+                                    <p className={clsx('text-[16px] font-semibold pl-2 whitespace-nowrap transition-all duration-300',
+                                            isDrawerOpen
+                                            ? 'opacity-0 max-w-0 overflow-hidden'
+                                            : 'opacity-100 max-w-[10rem]'
+                                    )}>For You</p>
                                 </div>
                             </h2>
                         </Link>
 
-                        <h2 className="w-[13rem] h-[2.5rem] ml-1 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
-                            <div className="pl-2 pt-1 flex items-center gap-2">
+                        <h2 className={clsx(" h-[2.5rem] ml-3 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md",
+                                                'transition-[width] duration-300 overflow-hidden',
+                                                isDrawerOpen ? 'w-[40px]' : 'w-[13rem]'
+                            )}>
+                            <div className="pl-1 pt-1 flex items-center gap-2">
                                 <div className="text-[21px]">
                                     <div className="w-[2rem] h-[2rem] justify-center items-center flex relative">
                                        <i className="fa-regular fa-compass"></i>
                                     </div>
                                 </div>
-                                <p className="text-[16px] text-black font-semibold pl-2">Explore</p>
+                                <p className={clsx('text-[16px] font-semibold pl-2 whitespace-nowrap transition-all duration-300',
+                                            isDrawerOpen
+                                            ? 'opacity-0 max-w-0 overflow-hidden'
+                                            : 'opacity-100 max-w-[10rem]'
+                                    )}>Explore</p>
                             </div>
                         </h2>
                         <Link  to="/following">
                         
-                        <h2 className="w-[13rem] h-[2.5rem] ml-1 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
-                            <div className="pl-2 pt-1 flex items-center gap-2">
+                        <h2 className={clsx(" h-[2.5rem] ml-3 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md",
+                                                'transition-[width] duration-300 overflow-hidden',
+                                                isDrawerOpen ? 'w-[40px]' : 'w-[13rem]'
+                            )}>
+                            <div className="pl-1 pt-1 flex items-center gap-2">
                                 <div className="text-[21px]">
                                     <div className="w-[2rem] h-[2rem] justify-center items-center flex relative">
                                             <i className="fa-solid fa-user-check"></i>
                                     </div>
                                 </div>
-                                <p className="text-[16px] text-black font-semibold pl-2">Following</p>
+                                <p className={clsx('text-[16px] font-semibold pl-2 whitespace-nowrap transition-all duration-300',
+                                            isDrawerOpen
+                                            ? 'opacity-0 max-w-0 overflow-hidden'
+                                            : 'opacity-100 max-w-[10rem]'
+                                    )}>Following</p>
                             </div>
                         </h2>
                         </Link>
                         
-                        <h2 className="w-[13rem] h-[2.5rem] ml-1 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
-                            <div className="pl-2 pt-1 flex items-center gap-2">
+                        <h2 className={clsx(" h-[2.5rem] ml-3 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md",
+                                                'transition-[width] duration-300 overflow-hidden',
+                                                isDrawerOpen ? 'w-[40px]' : 'w-[13rem]'
+                            )}>
+                            <div className="pl-1 pt-1 flex items-center gap-2">
                                 <div className="text-[21px]">
                                     <div className="w-[2rem] h-[2rem] justify-center items-center flex relative">
                                         <i className="fa-solid fa-user-group"></i>
                                     </div>
                                 </div>
-                                <p className="text-[16px] text-black font-semibold pl-2">Friends</p>
+                                <p className={clsx('text-[16px] font-semibold pl-2 whitespace-nowrap transition-all duration-300',
+                                            isDrawerOpen
+                                            ? 'opacity-0 max-w-0 overflow-hidden'
+                                            : 'opacity-100 max-w-[10rem]'
+                                    )}>Friends</p>
                             </div>
                         </h2>
-                        <h2 className="w-[13rem] h-[2.5rem] ml-1 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
-                            <div className="pl-2 pt-1 flex items-center gap-2">
+                        <h2 className={clsx(" h-[2.5rem] ml-3 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md",
+                                                'transition-[width] duration-300 overflow-hidden',
+                                                isDrawerOpen ? 'w-[40px]' : 'w-[13rem]'
+                            )}>
+                            <div className="pl-1 pt-1 flex items-center gap-2">
                                 <div className="text-[21px]">
                                     <div className="w-[2rem] h-[2rem] justify-center items-center flex relative">
                                         <i className="fa-solid fa-video"></i>
                                     </div>
                                 </div>
-                                <p className="text-[16px] text-black font-semibold pl-2">LIVE</p>
+                                <p className={clsx('text-[16px] font-semibold pl-2 whitespace-nowrap transition-all duration-300',
+                                            isDrawerOpen
+                                            ? 'opacity-0 max-w-0 overflow-hidden'
+                                            : 'opacity-100 max-w-[10rem]'
+                                    )}>LIVE</p>
                             </div>
                         </h2>
-                        <h2 className="w-[13rem] h-[2.5rem] ml-1 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
-                            <div className="pl-2 pt-1 flex items-center gap-2">
+                        <h2 className={clsx(" h-[2.5rem] ml-3 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md",
+                                                'transition-[width] duration-300 overflow-hidden',
+                                                isDrawerOpen ? 'w-[40px]' : 'w-[13rem]'
+                            )}>
+                            <div className="pl-1 pt-1 flex items-center gap-2">
                                 <div className="text-[21px]">
                                     <div className="w-[2rem] h-[2rem] justify-center items-center flex relative">
                                         <i className="fa-solid fa-message"></i>
                                     </div>
                                 </div>
-                                <p className="text-[16px] text-black font-semibold pl-2">Messages</p>
+                                <p className={clsx('text-[16px] font-semibold pl-2 whitespace-nowrap transition-all duration-300',
+                                            isDrawerOpen
+                                            ? 'opacity-0 max-w-0 overflow-hidden'
+                                            : 'opacity-100 max-w-[10rem]'
+                                    )}>Messages</p>
                             </div>
                         </h2>
-                        <div className="w-[13rem] h-[2.5rem] ml-1 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
-                            <div className="pl-2 pt-1 flex items-center gap-2">
+                        <div className={clsx(" h-[2.5rem] ml-3 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md",
+                                                'transition-[width] duration-300 overflow-hidden',
+                                                isDrawerOpen ? 'w-[40px]' : 'w-[13rem]'
+                            )}>
+                            <div className="pl-1 pt-1 flex items-center gap-2">
                                 <div className="text-[21px]">
                                     <div className="w-[2rem] h-[2rem] justify-center items-center flex relative">
                                         <i className="fa-solid fa-bell"></i>
                                     </div>
                                 </div>
-                                <p className="text-[16px] text-black font-semibold pl-2">Activity</p>
+                                <p className={clsx('text-[16px] font-semibold pl-2 whitespace-nowrap transition-all duration-300',
+                                            isDrawerOpen
+                                            ? 'opacity-0 max-w-0 overflow-hidden'
+                                            : 'opacity-100 max-w-[10rem]'
+                                    )}>Activity</p>
                             </div>
                         </div>
-                        <div className="w-[13rem] h-[2.5rem] ml-1 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
-                            <div className="pl-2 pt-1 flex items-center gap-2">
+                        <div className={clsx(" h-[2.5rem] ml-3 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md",
+                                                'transition-[width] duration-300 overflow-hidden',
+                                                isDrawerOpen ? 'w-[40px]' : 'w-[13rem]'
+                            )}>
+                            <div className="pl-1 pt-1 flex items-center gap-2">
                                 <div className="text-[21px]">
                                     <div className="w-[2rem] h-[2rem] justify-center items-center flex relative">
                                         <i className="fa-solid fa-circle-plus"></i>
                                     </div>
                                 </div>
-                                <p className="text-[16px] text-black font-semibold pl-2">Upload</p>
+                                <p className={clsx('text-[16px] font-semibold pl-2 whitespace-nowrap transition-all duration-300',
+                                            isDrawerOpen
+                                            ? 'opacity-0 max-w-0 overflow-hidden'
+                                            : 'opacity-100 max-w-[10rem]'
+                                    )}>Upload</p>
                             </div>
                         </div>
-                        <h2 className="w-[13rem] h-[2.5rem] ml-1 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
-                            <div className="pl-2 pt-1 flex items-center gap-2">
+                        <h2 className={clsx(" h-[2.5rem] ml-3 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md",
+                                                'transition-[width] duration-300 overflow-hidden',
+                                                isDrawerOpen ? 'w-[40px]' : 'w-[13rem]'
+                            )}>
+                            <div className="pl-1 pt-1 flex items-center gap-2">
                                 <div className="text-[21px]">
                                     <div className="w-[2rem] h-[2rem] justify-center items-center flex relative">
                                         <img
@@ -129,22 +193,33 @@ function Sidebar() {
                     />
                                     </div>
                                 </div>
-                                <p className="text-[16px] text-black font-semibold pl-2">Profile</p>
+                                <p className={clsx('text-[16px] font-semibold pl-2 whitespace-nowrap transition-all duration-300',
+                                            isDrawerOpen
+                                            ? 'opacity-0 max-w-0 overflow-hidden'
+                                            : 'opacity-100 max-w-[10rem]'
+                                    )}>Profile</p>
                             </div>
                         </h2>
-                        <div className="w-[13rem] h-[2.5rem] ml-1 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
-                            <div className="pl-2 pt-1 flex items-center gap-2">
+                        <div className="w-[13rem] h-[2.5rem] ml-3 cursor-pointer hover:bg-[rgb(242,242,242)] rounded-md">
+                            <div className="pl-1 pt-1 flex items-center gap-2">
                                 <div className="text-[21px]">
                                     <div className="w-[2rem] h-[2rem] justify-center items-center flex relative">
                                         <i className="fa-solid fa-ellipsis"></i>
                                     </div>
                                 </div>
-                                <p className="text-[16px] text-black font-semibold pl-2">More</p>
+                                <p className={clsx('text-[16px] font-semibold pl-2 whitespace-nowrap transition-all duration-300',
+                                            isDrawerOpen
+                                            ? 'opacity-0 max-w-0 overflow-hidden'
+                                            : 'opacity-100 max-w-[10rem]'
+                                    )}>More</p>
                             </div>
                         </div>
                     </div>
 
-                    <div>
+                    <div className={clsx(
+  "transition-opacity duration-300",
+  isDrawerOpen ? "opacity-0 pointer-events-none" : "opacity-100"
+)}>
                         <div className="mx-1 h-px w-[85%] bg-gray-200 mb-3 mt-4" />
                         <div>
                             <div>
@@ -185,7 +260,10 @@ function Sidebar() {
                         
                         <div className="mx-1 h-px w-[85%] bg-gray-200 mt-4" />
                     </div>
-                    <div>
+                    <div className={clsx(
+  "transition-opacity duration-300",
+  isDrawerOpen ? "opacity-0 pointer-events-none" : "opacity-100"
+)}>
                         <div className="mt-3 w-[13rem] ml-2 ">
                             <h3 className="text-[15px] text-gray-500 font-semibold mb-1 cursor-pointer">Company</h3>
                             <h3 className="text-[15px] text-gray-500 font-semibold mb-1 cursor-pointer">Program</h3>
@@ -194,7 +272,7 @@ function Sidebar() {
                         </div>
                     </div>
                 </div>
-                <Drawwer_container/>
+                <Drawwer_container isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)}/>
             </div>
         </div>
     );
