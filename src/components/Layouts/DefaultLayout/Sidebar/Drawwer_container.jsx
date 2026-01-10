@@ -6,10 +6,10 @@ function Drawwer_container({onClose, isOpen}) {
             
             {isOpen && ( <div  className="fixed top-0 left-[24.5rem] w-[100vw] h-[100vh] z-[99]" onClick={onClose}></div>)}
             <div
-                className={clsx('w-[20rem] h-[100vh] fixed left-[4.5rem] bg-white z-[99] border-x border-[rgba(0,0,0,0.12)] overscroll-contain transition-all duration-300',
-                            isOpen ? 'translate-x-0 opacity-100' : '-translate-x-[390px] opacity-0')}
+                className={clsx('pointer-events-none h-[100vh] fixed left-[4.5rem] bg-white z-[99] border-x border-[rgba(0,0,0,0.12)] overscroll-contain transition-[width] duration-300 origin-left',
+                            isOpen ? 'w-[20rem] opacity-100' : 'w-0 opacity-0')}
             >
-                <div className="p-[0.5rem] pe-0">
+                <div className="p-[0.5rem] pe-0 ">
                     <div className="h-[4.5rem] pt-[1rem] pl-[0.5rem]">
                         <h2 className="text-[20px] font-semibold">Search</h2>
                     </div>
@@ -99,16 +99,16 @@ function Drawwer_container({onClose, isOpen}) {
                 </div>
 
                 <div className="absolute top-[1.5rem] right-[1rem] flex items-center justify-center">
-                    <button
+                    {isOpen && (<button
                         className="min-w-0 w-[28px] h-[1.75rem] p-0 bg-[rgba(0,0,0,0.05)] rounded-full
                          hover:bg-[rgba(0,0,0,0.1)]"
-                    >
+                    onClick={onClose}>
                         <div className="w-[16px] items-center flex justify-center w-full overflow-hidden">
                             <div className="text-[19px] flex shrink-0">
                                 <i className="fa-solid fa-x text-[10px]"></i>
                             </div>
                         </div>
-                    </button>
+                    </button>)}
                 </div>
 
                 <div>
